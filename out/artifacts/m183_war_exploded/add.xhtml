@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Employee Management</title>
+    </h:head>
+    <h:body>
+        <h1>Add Employee</h1>
+        <h:form id="addForm">
+            <h:panelGrid columns="2">
+                <h:outputText value="Last Name: " />
+                <h:inputText id="lastName" value="#{employee.lastName}" required="true" requiredMessage="Please enter Last Name" />
+                <h:outputText value="First Name: " />
+                <h:inputText id="firstName" value="#{employee.firstName}" required="true" requiredMessage="Please enter First Name"/>
+                <h:outputText value="Employment Date (yyyy-MM-dd): " />
+                <h:inputText id="joiningDate" value="#{employee.convertDate}" required="true" requiredMessage="Please enter Date" >
+                    <f:convertDateTime pattern="yyyy-MM-dd" />
+                </h:inputText>
+                <h:outputText value="Email: " />
+                <h:inputText id="email" value="#{employee.email}" required="true" requiredMessage="Please enter Email"/>
+                <h:outputText value="Gender: " />
+                <h:selectOneRadio id="gender" value="#{employee.gender}" required="true" requiredMessage="Please choose Gender" >
+                    <f:selectItem itemValue="1" itemLabel="Male" />
+                    <f:selectItem itemValue="0" itemLabel="Female" />
+                </h:selectOneRadio>
+            </h:panelGrid>
+            <h:commandButton action="#{employee.addEmployee}" value="Send" />
+            <h:button value="Back" outcome="table.xhtml" />
+            <h:messages styleClass="errorMessage" style="color: red"/>
+        </h:form>
+    </h:body>
+</html>
