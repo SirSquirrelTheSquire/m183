@@ -1,6 +1,6 @@
 package com.project;
 
-import com.project.DAO.LoginBean;
+import com.project.beans.LoginBean;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

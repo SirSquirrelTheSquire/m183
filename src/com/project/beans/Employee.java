@@ -3,8 +3,6 @@ package com.project.beans;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import java.io.IOException;
-import java.rmi.server.ExportException;
 import java.sql.*;
 import java.util.logging.*;
 import java.util.regex.Pattern;
@@ -12,7 +10,7 @@ import java.util.regex.Pattern;
 @ManagedBean(name="employee")
 public class Employee {
 
-    private final static Logger LOGGER = Logger.getLogger(Employee.class.getName());
+    private final static Logger LOGGER = Logger.getLogger( Logger.GLOBAL_LOGGER_NAME );
     static Handler fileHandler = null;
 
     private String lastName;

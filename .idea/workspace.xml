@@ -6,7 +6,22 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0965eb31-9157-4f2d-a9e9-843cee8fa4e0" name="Default Changelist" comment="" />
+    <list default="true" id="0965eb31-9157-4f2d-a9e9-843cee8fa4e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/m183_war_exploded/WEB-INF/classes/com/project/DAO/LoginBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/m183_war_exploded/WEB-INF/classes/com/project/LoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/m183_war_exploded/WEB-INF/classes/com/project/LoginFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/m183_war_exploded/WEB-INF/classes/com/project/beans/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/m183_war_exploded/WEB-INF/classes/com/project/beans/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/m183_war_exploded/WEB-INF/classes/com/project/beans/employee.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/m183/com/project/DAO/LoginBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/m183/com/project/LoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/m183/com/project/LoginFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/m183/com/project/beans/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/m183/com/project/beans/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/m183/com/project/beans/employee.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/project/DAO/LoginBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/project/beans/LoginBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/project/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/project/LoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/project/beans/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/project/beans/Employee.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +37,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -30,8 +48,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1QdecAVAQc1igsVkkN4CutzAtf1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.17.jar!/" />
@@ -177,10 +197,25 @@
       <workItem from="1573323662742" duration="18903000" />
       <workItem from="1573345687953" duration="1877000" />
       <workItem from="1573397288033" duration="801000" />
+      <workItem from="1573398333786" duration="9704000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

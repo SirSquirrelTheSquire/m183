@@ -1,18 +1,19 @@
-package com.project.DAO;
+package com.project.beans;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.logging.*;
 
 @ManagedBean(name = "loginBeanBean")
 @SessionScoped
 public class LoginBean implements Serializable {
+
+    private final static Logger LOGGER = Logger.getLogger( Logger.GLOBAL_LOGGER_NAME );
+    static Handler fileHandler = null;
 
     private String username;
     private String password;
@@ -40,8 +41,24 @@ public class LoginBean implements Serializable {
 
     public String action() {
 
+        LogManager.getLogManager().reset();
+        LOGGER.setLevel(Level.ALL);
+
+        try {
+            fileHandler = new FileHandler("employee.log");
+            SimpleFormatter simple = new SimpleFormatter();
+            fileHandler.setFormatter(simple);
+            fileHandler.setLevel(Level.ALL);
+
+            LOGGER.addHandler(fileHandler);
+
+        } catch (Exception ex) {
+            LOGGER.log(Level.SEVERE, "File logger not working", ex);
+        }
+
         Connection con;
-        Statement ps;
+        PreparedStatement pres;
+        Statement s;
         ResultSet rs;
 
         String url = "jdbc:mysql://localhost:3306/employee?autoReconnect=true&useSSL=false";
@@ -51,20 +68,23 @@ public class LoginBean implements Serializable {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, usrn, pwd);
-            ps = con.createStatement();
-            rs = ps.executeQuery("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
-            //rs.next();
 
-            if(rs.next() == true) {
-                isLogged = true;
-                return "table.xhtml?faces-redirect-true";
-            } else {
-                FacesMessage message = new FacesMessage("Username or Password is incorrect");
-                FacesContext.getCurrentInstance().addMessage(null, message);
-                return null;
-            }
+            // Normal Statement
             /**
-            if(username.equalsIgnoreCase(rs.getString(1).toString()) && password.equals(rs.getString(2).toString())) {
+            s = con.createStatement();
+            rs = s.executeQuery("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
+             **/
+
+            // Prepared Statement
+
+            pres = con.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+            pres.setString(1, username);
+            pres.setString(2, password);
+            rs = pres.executeQuery();
+
+
+            if(rs.next()) {
+                LOGGER.log(Level.INFO, "User logged in");
                 isLogged = true;
                 return "table.xhtml?faces-redirect-true";
             } else {
@@ -72,7 +92,6 @@ public class LoginBean implements Serializable {
                 FacesContext.getCurrentInstance().addMessage(null, message);
                 return null;
             }
-             **/
 
         } catch (Exception ex) {
             ex.printStackTrace();
